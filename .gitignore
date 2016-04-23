@@ -19,3 +19,6 @@ sign_in*
 error*
 onejar/META-INF/MANIFEST.MF
 dist/JBidwatcher.app
+/nbproject/private/
+/build/
+/dist/

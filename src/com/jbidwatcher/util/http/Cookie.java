@@ -36,8 +36,10 @@ public class Cookie {
   public final void setCookie(String newCookie) {
     int idxEquals = newCookie.indexOf('=');
 
-    _key = newCookie.substring(0,idxEquals);
-    _value = newCookie.substring(idxEquals+1, newCookie.indexOf(';'));
+    if (idxEquals >= 0) {
+      _key = newCookie.substring(0,idxEquals);
+      _value = newCookie.substring(idxEquals+1, newCookie.indexOf(';'));
+    }
     _wholeCookie = newCookie;
   }
 
