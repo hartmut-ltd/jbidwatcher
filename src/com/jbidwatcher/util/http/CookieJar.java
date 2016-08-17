@@ -179,7 +179,9 @@ public class CookieJar {
         if(nextKey.startsWith("Set-Cookie") ||
            nextKey.startsWith("Set-cookie")) {
           Cookie newCookie = new Cookie(uc.getHeaderField(i));
-          mCookies.put(newCookie.getKey(), newCookie);
+          if (newCookie != null && newCookie.getKey() != null) {
+            mCookies.put(newCookie.getKey(), newCookie);
+          }
         }
       }
       i++;
